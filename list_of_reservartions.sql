@@ -1,0 +1,1 @@
+select * from RESERVATION where CUSTOMER_ID = 'C005';
