@@ -1,0 +1,7 @@
+Assumptions 
+
+1. The restaurant has multiple employees
+2. Each employee has one restaurant 
+3. Each restaurant has multiple tables
+4. Every reservation has one order 
+5. Each order is only for one reservation
