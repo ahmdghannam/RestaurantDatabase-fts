@@ -1,0 +1,17 @@
+USE Restaurants;
+GO
+
+CREATE FUNCTION fn_CalculateRevenue(@RestaurantId VARCHAR(10))
+RETURNS DECIMAL(10,2)
+AS
+BEGIN
+    DECLARE @TotalRevenue DECIMAL(10,2);
+
+    SELECT @TotalRevenue = ISNULL(SUM(o.TOTAL_AMOUNT), 0)
+    FROM [ORDER] o
+    INNER JOIN RESERVATION r ON o.RESERVATION_ID = r.RESERVATION_ID
+    WHERE r.RESTAURANT_ID = @RestaurantId;
+
+    RETURN @TotalRevenue;
+END;
+GO
