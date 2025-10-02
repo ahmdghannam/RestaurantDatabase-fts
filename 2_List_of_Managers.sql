@@ -1,0 +1,1 @@
+select * from EMPLOYEE where position = 'chef';
